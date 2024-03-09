@@ -1,11 +1,11 @@
-# Your Module Name
+# tf-azurerm-module_collection-connect_hub_spoke
 
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 [![License: CC BY-NC-ND 4.0](https://img.shields.io/badge/License-CC_BY--NC--ND_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-nd/4.0/)
 
 ## Overview
 
-What does this module do?
+This module helps establishing peering connection between two azure virtual networks.
 
 ## Pre-Commit hooks
 
@@ -103,3 +103,40 @@ If `make check` target is successful, developer is good to commit the code to pr
 - runs `conftests`. `conftests` make sure `policy` checks are successful.
 - runs `terratest`. This is integration test suit.
 - runs `opa` tests
+<!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+## Requirements
+
+| Name | Version |
+|------|---------|
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | <= 1.5.5 |
+| <a name="requirement_azurerm"></a> [azurerm](#requirement\_azurerm) | ~> 3.77 |
+
+## Providers
+
+No providers.
+
+## Modules
+
+| Name | Source | Version |
+|------|--------|---------|
+| <a name="module_peer_firstVnet_to_secondVnet"></a> [peer\_firstVnet\_to\_secondVnet](#module\_peer\_firstVnet\_to\_secondVnet) | git::https://github.com/nexient-llc/tf-azurerm-module_primitive-vnet_peering.git | 0.1.0 |
+| <a name="module_peer_secondVnet_to_firstVnet"></a> [peer\_secondVnet\_to\_firstVnet](#module\_peer\_secondVnet\_to\_firstVnet) | git::https://github.com/nexient-llc/tf-azurerm-module_primitive-vnet_peering.git | 0.1.0 |
+
+## Resources
+
+No resources.
+
+## Inputs
+
+| Name | Description | Type | Default | Required |
+|------|-------------|------|---------|:--------:|
+| <a name="input_peer_firstVnet_to_secondVnet"></a> [peer\_firstVnet\_to\_secondVnet](#input\_peer\_firstVnet\_to\_secondVnet) | Virtual network peering connection from hub to spoke | <pre>object({<br>    peering_name                 = string<br>    resource_group_name          = string<br>    virtual_network_name         = string<br>    remote_virtual_network_id    = string<br>    allow_virtual_network_access = bool<br>    allow_forwarded_traffic      = bool<br>    allow_gateway_transit        = bool<br>    use_remote_gateways          = bool<br>  })</pre> | n/a | yes |
+| <a name="input_peer_secondVnet_to_firstVnet"></a> [peer\_secondVnet\_to\_firstVnet](#input\_peer\_secondVnet\_to\_firstVnet) | Virtual network peering connection from hub to spoke | <pre>object({<br>    peering_name                 = string<br>    resource_group_name          = string<br>    virtual_network_name         = string<br>    remote_virtual_network_id    = string<br>    allow_virtual_network_access = bool<br>    allow_forwarded_traffic      = bool<br>    allow_gateway_transit        = bool<br>    use_remote_gateways          = bool<br>  })</pre> | n/a | yes |
+
+## Outputs
+
+| Name | Description |
+|------|-------------|
+| <a name="output_firstVnet_peering_id"></a> [firstVnet\_peering\_id](#output\_firstVnet\_peering\_id) | The ID of the Virtual Network Peering. |
+| <a name="output_secondVnet_peering_id"></a> [secondVnet\_peering\_id](#output\_secondVnet\_peering\_id) | The ID of the Virtual Network Peering. |
+<!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
