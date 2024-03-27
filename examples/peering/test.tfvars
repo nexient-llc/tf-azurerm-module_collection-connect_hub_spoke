@@ -170,48 +170,6 @@ nat_rule_collection = [
     ]
   }
 ]
-# network_map_spoke = {
-#   "spokenetwork" = {
-#     use_for_each    = false
-#     address_space   = ["172.16.0.0/16"]
-#     subnet_names    = ["spoke-resources"]
-#     subnet_prefixes = ["172.16.1.0/24"]
-#   }
-# }
-# security_rules = [
-#   {
-#     name                         = "AllowRdpInbound"
-#     access                       = "Allow"
-#     priority                     = 100
-#     direction                    = "Inbound"
-#     protocol                     = "Tcp"
-#     description                  = "Allow RDP inbound traffic"
-#     source_port_range            = 3389
-#     destination_port_range       = 3389
-#     source_address_prefix        = "*"               // any source
-#     destination_address_prefixes = ["172.16.1.0/24"] // spoke-resources subnet prefix
-#   },
-#   {
-#     name                         = "AllowHttpInbound"
-#     access                       = "Allow"
-#     priority                     = 101
-#     direction                    = "Inbound"
-#     protocol                     = "Tcp"
-#     description                  = "Allow HTTP inbound traffic"
-#     source_port_ranges           = [443]
-#     destination_port_ranges      = [443]
-#     source_address_prefix        = "*"               // any source
-#     destination_address_prefixes = ["172.16.1.0/24"] // spoke-resources subnet prefix
-#   }
-# ]
-# routes = {
-#   "routeToHubFw" = {
-#     name                   = "routeToHubFw"
-#     address_prefix         = "0.0.0.0/0"
-#     next_hop_type          = "VirtualAppliance"
-#     next_hop_in_ip_address = "10.0.1.4" // hub firewall private IP
-#   }
-# }
 use_for_each  = true
 address_space = ["172.16.0.0/16"]
 subnet_map = {

@@ -140,34 +140,6 @@ variable "class_env" {
   }
 }
 
-//networking module for hub
-# variable "network_map_hub" {
-#   description = "Map of spoke networks where vnet name is key, and value is object containing attributes to create a network"
-#   type = map(object({
-#     use_for_each    = bool
-#     address_space   = optional(list(string), ["10.0.0.0/16"])
-#     subnet_names    = optional(list(string), ["subnet1", "subnet2", "subnet3"])
-#     subnet_prefixes = optional(list(string), ["10.0.1.0/24", "10.0.2.0/24", "10.0.3.0/24"])
-#     bgp_community   = optional(string, null)
-#     ddos_protection_plan = optional(object(
-#       {
-#         enable = bool
-#         id     = string
-#       }
-#     ), null)
-#     dns_servers                                           = optional(list(string), [])
-#     nsg_ids                                               = optional(map(string), {})
-#     route_tables_ids                                      = optional(map(string), {})
-#     subnet_delegation                                     = optional(map(map(any)), {})
-#     subnet_enforce_private_link_endpoint_network_policies = optional(map(bool), {})
-#     subnet_enforce_private_link_service_network_policies  = optional(map(bool), {})
-#     subnet_service_endpoints                              = optional(map(list(string)), {})
-#     tags                                                  = optional(map(string), {})
-#     tracing_tags_enabled                                  = optional(bool, false)
-#     tracing_tags_prefix                                   = optional(string, "")
-#   }))
-# }
-
 variable "network_map_hub" {
   description = "Attributes of virtual network to be created."
   type = object({
@@ -199,60 +171,6 @@ variable "location" {
   description = "Azure region to use"
   type        = string
 }
-
-# variable "firewall_map" {
-#   description = "Map of azure firewalls where name is key, and value is object containing attributes to create a azure firewall"
-#   type = map(object({
-#     logs_destinations_ids = list(string)
-#     subnet_cidr           = optional(string)
-#     additional_public_ips = optional(list(object(
-#       {
-#         name                 = string,
-#         public_ip_address_id = string
-#     })), [])
-#     application_rule_collections = optional(list(object(
-#       {
-#         name     = string,
-#         priority = number,
-#         action   = string,
-#         rules = list(object(
-#           { name             = string,
-#             source_addresses = list(string),
-#             source_ip_groups = list(string),
-#             target_fqdns     = list(string),
-#             protocols = list(object(
-#               { port = string,
-#             type = string }))
-#           }
-#         ))
-#     })))
-#     custom_diagnostic_settings_name = optional(string)
-#     custom_firewall_name            = optional(string)
-#     dns_servers                     = optional(string)
-#     extra_tags                      = optional(map(string))
-#     firewall_private_ip_ranges      = optional(list(string))
-#     ip_configuration_name           = optional(string)
-#     network_rule_collections = optional(list(object({
-#       name     = string,
-#       priority = number,
-#       action   = string,
-#       rules = list(object({
-#         name                  = string,
-#         source_addresses      = list(string),
-#         source_ip_groups      = optional(list(string)),
-#         destination_ports     = list(string),
-#         destination_addresses = list(string),
-#         destination_ip_groups = optional(list(string)),
-#         destination_fqdns     = optional(list(string)),
-#         protocols             = list(string)
-#       }))
-#     })))
-#     public_ip_zones = optional(list(number))
-#     sku_tier        = string
-#     zones           = optional(list(number))
-#   }))
-#   default = {}
-# }
 
 variable "firewall_map" {
   description = "Attributes to create a azure firewall"
