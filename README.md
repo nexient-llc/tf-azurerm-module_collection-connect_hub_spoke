@@ -119,8 +119,8 @@ No providers.
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_peer_firstVnet_to_secondVnet"></a> [peer\_firstVnet\_to\_secondVnet](#module\_peer\_firstVnet\_to\_secondVnet) | git::https://github.com/nexient-llc/tf-azurerm-module_primitive-vnet_peering.git | 0.1.0 |
-| <a name="module_peer_secondVnet_to_firstVnet"></a> [peer\_secondVnet\_to\_firstVnet](#module\_peer\_secondVnet\_to\_firstVnet) | git::https://github.com/nexient-llc/tf-azurerm-module_primitive-vnet_peering.git | 0.1.0 |
+| <a name="module_peer_firstVnet_to_secondVnet"></a> [peer\_firstVnet\_to\_secondVnet](#module\_peer\_firstVnet\_to\_secondVnet) | git::https://github.com/launchbynttdata/tf-azurerm-module_primitive-vnet_peering.git | 1.0.0 |
+| <a name="module_peer_secondVnet_to_firstVnet"></a> [peer\_secondVnet\_to\_firstVnet](#module\_peer\_secondVnet\_to\_firstVnet) | git::https://github.com/launchbynttdata/tf-azurerm-module_primitive-vnet_peering.git | 1.0.0 |
 
 ## Resources
 

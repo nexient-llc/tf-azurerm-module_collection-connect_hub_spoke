@@ -391,9 +391,3 @@ variable "tracing_tags_prefix" {
   description = "Default prefix for generated tracing tags"
   nullable    = false
 }
-
-variable "vnet_tags" {
-  type        = map(string)
-  default     = {}
-  description = "The tags to associate with your network and subnets."
-}

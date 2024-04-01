@@ -11,7 +11,7 @@
 // limitations under the License.
 
 module "peer_firstVnet_to_secondVnet" {
-  source = "git::https://github.com/nexient-llc/tf-azurerm-module_primitive-vnet_peering.git?ref=0.1.0"
+  source = "git::https://github.com/launchbynttdata/tf-azurerm-module_primitive-vnet_peering.git?ref=1.0.0"
 
   peering_name                 = var.peer_firstVnet_to_secondVnet.peering_name
   resource_group_name          = var.peer_firstVnet_to_secondVnet.resource_group_name
@@ -24,7 +24,7 @@ module "peer_firstVnet_to_secondVnet" {
 }
 
 module "peer_secondVnet_to_firstVnet" {
-  source = "git::https://github.com/nexient-llc/tf-azurerm-module_primitive-vnet_peering.git?ref=0.1.0"
+  source = "git::https://github.com/launchbynttdata/tf-azurerm-module_primitive-vnet_peering.git?ref=1.0.0"
 
   peering_name                 = var.peer_secondVnet_to_firstVnet.peering_name
   resource_group_name          = var.peer_secondVnet_to_firstVnet.resource_group_name
@@ -35,4 +35,3 @@ module "peer_secondVnet_to_firstVnet" {
   allow_gateway_transit        = var.peer_secondVnet_to_firstVnet.allow_gateway_transit
   use_remote_gateways          = var.peer_secondVnet_to_firstVnet.use_remote_gateways
 }
-

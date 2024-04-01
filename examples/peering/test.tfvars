@@ -118,6 +118,7 @@ firewall_map = {
   subnet_cidr           = "10.0.1.0/24"
   additional_public_ips = []
   sku_tier              = "Standard"
+  ip_configuration_name = "ipconfig"
 }
 firewall_policy_rule_collection_group_priority = 100
 application_rule_collection                    = []

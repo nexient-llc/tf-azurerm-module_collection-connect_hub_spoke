@@ -1,9 +1,9 @@
-module github.com/nexient-llc/tf-azurerm-module_collection-connect_hub_spoke
+module github.com/launchbynttdata/tf-azurerm-module_collection-connect_hub_spoke
 
 go 1.21
 
 require (
-	github.com/nexient-llc/lcaf-component-terratest-common v1.0.3
+	github.com/launchbynttdata/lcaf-component-terratest v1.0.4
 	github.com/stretchr/testify v1.9.0
 )
 

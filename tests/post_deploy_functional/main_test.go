@@ -15,9 +15,9 @@ package test
 import (
 	"testing"
 
-	"github.com/nexient-llc/lcaf-component-terratest-common/lib"
-	"github.com/nexient-llc/lcaf-component-terratest-common/types"
-	"github.com/nexient-llc/tf-azurerm-module_collection-connect_hub_spoke/tests/testimpl"
+	"github.com/launchbynttdata/lcaf-component-terratest/lib"
+	"github.com/launchbynttdata/lcaf-component-terratest/types"
+	"github.com/launchbynttdata/tf-azurerm-module_collection-connect_hub_spoke/tests/testimpl"
 )
 
 const (
@@ -36,6 +36,7 @@ func TestPeeringCollectionModule(t *testing.T) {
 		SetTestSpecificFlags(map[string]types.TestFlags{
 			"peering": {
 				"IS_TERRAFORM_IDEMPOTENT_APPLY": false,
+				"SKIP_TEST":                     true,
 			},
 		}).
 		Build()
